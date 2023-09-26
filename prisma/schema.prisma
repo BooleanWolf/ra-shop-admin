@@ -77,6 +77,9 @@ model Product {
 
 model Order {
   id        String    @id @default(uuid())
+  bkashTrxId String    @default("")
+  nagadTrxId String    @default("")
+  phoneNumber String   @default("")
   storeId     String    // Foreign Key to Store
   store       Store     @relation("StoreToOrder", fields: [storeId], references: [id])
   orderItems OrderItem[] // Relation to OrderItem model
